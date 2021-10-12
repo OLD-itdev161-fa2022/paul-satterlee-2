@@ -24,6 +24,7 @@ class App extends React.Component {
           <header className="App-header">
               GoodThings
           </header>
+          {this.state.data}
         </div>
     );
   }
