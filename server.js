@@ -85,7 +85,7 @@ app.post(
         jwt.sign(
           payload,
           config.get('jwtSecret'),
-          { expriresIn: '10hr' },
+          { expiresIn: '10hr' },
           (err, token) => {
             if (err) throw err;
             res.json({ token: token });
