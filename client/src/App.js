@@ -88,11 +88,24 @@ class App extends React.Component {
             </header>
             <main>
               <Route exact path="/">
-                {this.state.data}
+                {user ?
+                  <React.Fragment>
+                    <div>Hello {user}!</div>
+                    <div>{data}</div>
+                  </React.Fragment> :
+                  <React.Fragment>
+                    Please Register or Login
+                  </React.Fragment>
+                }
+
               </Route>
               <Switch>
-                <Route path="/register" component={Register} />
-                <Route path="/login" component={Login} />
+                <Route 
+                  exact path="/register"
+                  render={() => <Register {...authProps} />} />
+                <Route
+                  exact path="/login"
+                  render={() => <Login {...authProps} />} />
               </Switch>
             </main>
           </div>
