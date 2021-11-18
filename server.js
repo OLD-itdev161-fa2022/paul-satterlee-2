@@ -166,7 +166,7 @@ const returnToken = (user, res) => {
  * @desc Create post
  */
 app.post(
-  'api/posts',
+  '/api/posts',
   [
     auth,
     [
